@@ -1,20 +1,9 @@
 # 12 SQL: Employee Tracker
 
-Developers frequently have to create interfaces that allow non-developers to easily view and interact with information stored in databases. These interfaces are called **content management systems (CMS)**. Your assignment this week is to build a command-line application from scratch to manage a company's employee database, using Node.js, Inquirer, and MySQL.
+# Target:
+ to build a command-line application from scratch to manage a company's employee database, using Node.js, Inquirer, and MySQL.
 
-Because this application won’t be deployed, you’ll also need to create a walkthrough video that demonstrates its functionality and all of the following acceptance criteria being met. You’ll need to submit a link to the video and add it to the README of your project.
-
-## User Story
-
-```md
-AS A business owner
-I WANT to be able to view and manage the departments, roles, and employees in my company
-SO THAT I can organize and plan my business
-```
-
-## Acceptance Criteria
-
-```md
+ACCEPTANCE CRITERIA:
 GIVEN a command-line application that accepts user input
 WHEN I start the application
 THEN I am presented with the following options: view all departments, view all roles, view all employees, add a department, add a role, add an employee, and update an employee role
@@ -32,79 +21,54 @@ WHEN I choose to add an employee
 THEN I am prompted to enter the employee’s first name, last name, role, and manager, and that employee is added to the database
 WHEN I choose to update an employee role
 THEN I am prompted to select an employee to update and their new role and this information is updated in the database
-```
 
-## Mock-Up
+#Links to code:#
+https://github.com/avneetk3/CMS-Employee-Tracker-/tree/master
 
-The following video shows an example of the application being used from the command line:
+#Links to video#
+https://drive.google.com/file/d/1EXk05xA7nzKPnhSuzQvtWoA-9B_3bxQ9/view?usp=sharing
 
-[![A video thumbnail shows the command-line employee management application with a play button overlaying the view.](./Assets/12-sql-homework-video-thumbnail.png)](https://2u-20.wistia.com/medias/2lnle7xnpk)
+#Techology used#
+MySQL and Node JS 
 
-## Getting Started
+#Tools used#
+MySQL client (MySQL2)
+Node js (terminal) , MySQL
+Visual Studio code terminal and power shell
 
-You’ll need to use the [MySQL2 package](https://www.npmjs.com/package/mysql2) to connect to your MySQL database and perform queries, the [Inquirer package](https://www.npmjs.com/package/inquirer) to interact with the user via the command line, and the [console.table package](https://www.npmjs.com/package/console.table) to print MySQL rows to the console.
+#Dependencies
+Install Node Js 
+Install MySql
+Inquirer
+Console Table to view table output
 
-**Important**: You will be committing a file that contains your database credentials. Make sure that your MySQL password is not used for any other personal accounts, because it will be visible on GitHub. In upcoming lessons, you will learn how to better secure this password, or you can start researching npm packages now that could help you.
+#Steps to execute the code#
+Install mySQL
+in terminal mysql -u root -p ,login with root password
+run commands: source db/db.sql
+source db/schema.sql
+source db./seeds.sql
+ use employee_DB
+ select * from employee;
+ select * from role;
+ select * from department;
+ exit 
+ to exit from SQL
+ Executing application: 
 
-You might also want to make your queries asynchronous. MySQL2 exposes a `.promise()` function on Connections to upgrade an existing non-Promise connection to use Promises. To learn more and make your queries asynchronous, refer to the [npm documentation on MySQL2](https://www.npmjs.com/package/mysql2).
+ Initialize node Js and create gitignore
+ for initilizing node in terminal execute command:
+ npm init --y
+  
+INSTALL npm PACKAGES :
+npm install express mysql2
+npm install inquirer
 
-Design the database schema as shown in the following image:
+To execute the code: npm start
+#Screen Shot of the app#
 
-![Database schema includes tables labeled “employee,” role,” and “department.”](./Assets/12-sql-homework-demo-01.png)
+![image](https://user-images.githubusercontent.com/92407474/149709889-54597423-6b4a-48cd-afde-86ce20003539.png)
 
-As the image illustrates, your schema should contain the following three tables:
 
-* `department`
-
-  * `id`: `INT PRIMARY KEY`
-
-  * `name`: `VARCHAR(30)` to hold department name
-
-* `role`
-
-  * `id`: `INT PRIMARY KEY`
-
-  * `title`: `VARCHAR(30)` to hold role title
-
-  * `salary`: `DECIMAL` to hold role salary
-
-  * `department_id`: `INT` to hold reference to department role belongs to
-
-* `employee`
-
-  * `id`: `INT PRIMARY KEY`
-
-  * `first_name`: `VARCHAR(30)` to hold employee first name
-
-  * `last_name`: `VARCHAR(30)` to hold employee last name
-
-  * `role_id`: `INT` to hold reference to employee role
-
-  * `manager_id`: `INT` to hold reference to another employee that is the manager of the current employee (`null` if the employee has no manager)
-
-You might want to use a separate file that contains functions for performing specific SQL queries you'll need to use. A constructor function or class could be helpful for organizing these. You might also want to include a `seeds.sql` file to pre-populate your database, making the development of individual features much easier.
-
-## Bonus
-
-Try to add some additional functionality to your application, such as the ability to do the following:
-
-* Update employee managers.
-
-* View employees by manager.
-
-* View employees by department.
-
-* Delete departments, roles, and employees.
-
-* View the total utilized budget of a department&mdash;in other words, the combined salaries of all employees in that department.
-
-## Review
-
-You are required to submit BOTH of the following for review:
-
-* A walkthrough video demonstrating the functionality of the application.
-
-* The URL of the GitHub repository, with a unique name and a README describing the project.
-
-- - -
-© 2021 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
+Created by Avneet Kaur , git hub: https://github.com/avneetk3
+ 
